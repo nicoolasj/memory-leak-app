@@ -28,10 +28,17 @@ class BroadcastReceiverActivity : AppCompatActivity() {
     private fun registerBroadCastReceiver() {
         broadcastReceiver = object : BroadcastReceiver() {
             override fun onReceive(context: Context?, intent: Intent?) {
-                Toast.makeText(this@BroadcastReceiverActivity, "Airplane mode changed", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    this@BroadcastReceiverActivity,
+                    "Airplane mode changed",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         }
-        registerReceiver(broadcastReceiver, IntentFilter(IntentFilter(Intent.ACTION_AIRPLANE_MODE_CHANGED)))
+        registerReceiver(
+            broadcastReceiver,
+            IntentFilter(IntentFilter(Intent.ACTION_AIRPLANE_MODE_CHANGED))
+        )
     }
 
     override fun onDestroy() {
