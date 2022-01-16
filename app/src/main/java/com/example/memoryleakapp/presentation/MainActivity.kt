@@ -23,31 +23,19 @@ class MainActivity : AppCompatActivity() {
     private fun setView() = binding.run {
         asyncTaskButton.setOnClickListener { showToast() }
         staticAsyncTaskButton.setOnClickListener { showToast() }
-        threadButton.setOnClickListener {
-            Intent(
-                this@MainActivity,
-                ThreadActivity::class.java
-            ).also { startActivity(it) }
-        }
+        threadButton.setOnClickListener { openActivity(ThreadActivity::class.java) }
         handlerButton.setOnClickListener { showToast() }
         singletonButton.setOnClickListener { showToast() }
         listenerButton.setOnClickListener { showToast() }
-        broadcastReceiverButton.setOnClickListener {
-            Intent(
-                this@MainActivity,
-                BroadcastReceiverActivity::class.java
-            ).also { startActivity(it) }
-        }
-        staticActivityOrViewButton.setOnClickListener {
-            Intent(
-                this@MainActivity,
-                StaticReferenceActivity::class.java
-            ).also { startActivity(it) }
-        }
+        broadcastReceiverButton.setOnClickListener { openActivity(BroadcastReceiverActivity::class.java) }
+        staticActivityOrViewButton.setOnClickListener { openActivity(StaticReferenceActivity::class.java) }
         innerClassButton.setOnClickListener { showToast() }
         anonymousClassButton.setOnClickListener { showToast() }
         timerTaskButton.setOnClickListener { showToast() }
     }
+
+    private fun <T: Any> openActivity(cls: Class<T>) =
+        Intent(this, cls).also { startActivity(it) }
 
     private fun showToast() =
         Toast.makeText(this@MainActivity, "not implemented", Toast.LENGTH_SHORT).show()
