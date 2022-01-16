@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.memoryleakapp.databinding.ActivityMainBinding
 import com.example.memoryleakapp.presentation.leaks.BroadcastReceiverActivity
+import com.example.memoryleakapp.presentation.leaks.StaticReferenceActivity
 import com.example.memoryleakapp.presentation.leaks.ThreadActivity
 
 class MainActivity : AppCompatActivity() {
@@ -37,7 +38,12 @@ class MainActivity : AppCompatActivity() {
                 BroadcastReceiverActivity::class.java
             ).also { startActivity(it) }
         }
-        staticActivityOrViewButton.setOnClickListener { showToast() }
+        staticActivityOrViewButton.setOnClickListener {
+            Intent(
+                this@MainActivity,
+                StaticReferenceActivity::class.java
+            ).also { startActivity(it) }
+        }
         innerClassButton.setOnClickListener { showToast() }
         anonymousClassButton.setOnClickListener { showToast() }
         timerTaskButton.setOnClickListener { showToast() }
