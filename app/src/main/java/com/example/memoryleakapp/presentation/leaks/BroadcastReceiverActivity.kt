@@ -14,7 +14,6 @@ class BroadcastReceiverActivity : AppCompatActivity() {
 
     private var broadcastReceiver: BroadcastReceiver? = null
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_broadcast_receiver)

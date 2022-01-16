@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.memoryleakapp.databinding.ActivityMainBinding
 import com.example.memoryleakapp.presentation.leaks.BroadcastReceiverActivity
+import com.example.memoryleakapp.presentation.leaks.ThreadActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,7 +22,12 @@ class MainActivity : AppCompatActivity() {
     private fun setView() = binding.run {
         asyncTaskButton.setOnClickListener { showToast() }
         staticAsyncTaskButton.setOnClickListener { showToast() }
-        threadButton.setOnClickListener { showToast() }
+        threadButton.setOnClickListener {
+            Intent(
+                this@MainActivity,
+                ThreadActivity::class.java
+            ).also { startActivity(it) }
+        }
         handlerButton.setOnClickListener { showToast() }
         singletonButton.setOnClickListener { showToast() }
         listenerButton.setOnClickListener { showToast() }
