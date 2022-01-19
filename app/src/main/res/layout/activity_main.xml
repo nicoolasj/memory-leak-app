@@ -13,71 +13,15 @@
         tools:context=".presentation.MainActivity">
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/asyncTaskButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/default_margin"
-            android:text="@string/async_task_button"
-            app:layout_constraintBottom_toTopOf="@+id/staticAsyncTaskButton"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_chainStyle="packed" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/staticAsyncTaskButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/default_margin"
-            android:text="@string/static_async_task_button"
-            app:layout_constraintBottom_toTopOf="@+id/threadButton"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/asyncTaskButton" />
-
-        <com.google.android.material.button.MaterialButton
             android:id="@+id/threadButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/default_margin"
             android:text="@string/thread_button"
-            app:layout_constraintBottom_toTopOf="@+id/handlerButton"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/staticAsyncTaskButton" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/handlerButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/default_margin"
-            android:text="@string/handler_button"
-            app:layout_constraintBottom_toTopOf="@+id/singletonButton"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/threadButton" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/singletonButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/default_margin"
-            android:text="@string/singleton_button"
-            app:layout_constraintBottom_toTopOf="@+id/listenerButton"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/handlerButton" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/listenerButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/default_margin"
-            android:text="@string/listener_button"
             app:layout_constraintBottom_toTopOf="@+id/broadcastReceiverButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/singletonButton" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/broadcastReceiverButton"
@@ -88,7 +32,7 @@
             app:layout_constraintBottom_toTopOf="@+id/staticActivityOrViewButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/listenerButton" />
+            app:layout_constraintTop_toBottomOf="@+id/threadButton" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/staticActivityOrViewButton"
@@ -96,43 +40,10 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/default_margin"
             android:text="@string/static_activity_or_view_button"
-            app:layout_constraintBottom_toTopOf="@+id/innerClassButton"
+            app:layout_constraintBottom_toTopOf="@+id/viewsLeakButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/broadcastReceiverButton" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/innerClassButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/default_margin"
-            android:text="@string/inner_class_button"
-            app:layout_constraintBottom_toTopOf="@+id/anonymousClassButton"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/staticActivityOrViewButton" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/anonymousClassButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/default_margin"
-            android:text="@string/anonymous_class_button"
-            app:layout_constraintBottom_toTopOf="@+id/timerTaskButton"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/innerClassButton" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/timerTaskButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/default_margin"
-            android:text="@string/timer_task_button"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/anonymousClassButton" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/viewsLeakButton"
@@ -143,7 +54,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/timerTaskButton" />
+            app:layout_constraintTop_toBottomOf="@+id/staticActivityOrViewButton" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
