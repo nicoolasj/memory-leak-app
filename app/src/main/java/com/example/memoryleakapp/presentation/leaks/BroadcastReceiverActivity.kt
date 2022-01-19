@@ -9,7 +9,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.memoryleakapp.R
 
-
 class BroadcastReceiverActivity : AppCompatActivity() {
 
     private var broadcastReceiver: BroadcastReceiver? = null

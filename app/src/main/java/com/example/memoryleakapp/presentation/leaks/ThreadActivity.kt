@@ -7,9 +7,6 @@ import android.os.SystemClock
 import androidx.appcompat.app.AppCompatActivity
 import com.example.memoryleakapp.R
 
-
-
-
 class ThreadActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
