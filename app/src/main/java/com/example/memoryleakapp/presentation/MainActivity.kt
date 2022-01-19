@@ -8,6 +8,7 @@ import com.example.memoryleakapp.databinding.ActivityMainBinding
 import com.example.memoryleakapp.presentation.leaks.BroadcastReceiverActivity
 import com.example.memoryleakapp.presentation.leaks.StaticReferenceActivity
 import com.example.memoryleakapp.presentation.leaks.ThreadActivity
+import com.example.memoryleakapp.presentation.leaks.viewsleak.ViewsLeakActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -32,6 +33,7 @@ class MainActivity : AppCompatActivity() {
         innerClassButton.setOnClickListener { showToast() }
         anonymousClassButton.setOnClickListener { showToast() }
         timerTaskButton.setOnClickListener { showToast() }
+        viewsLeakButton.setOnClickListener { openActivity(ViewsLeakActivity::class.java) }
     }
 
     private fun <T: Any> openActivity(cls: Class<T>) =

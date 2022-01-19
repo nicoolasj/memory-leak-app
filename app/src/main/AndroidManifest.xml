@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MemoryLeakApp">
         <activity
+            android:name=".presentation.leaks.viewsleak.ViewsLeakActivity"
+            android:exported="false" />
+        <activity
             android:name=".presentation.leaks.StaticReferenceActivity"
             android:exported="false" />
         <activity

@@ -11,4 +11,8 @@
     <string name="inner_class_button">Inner Class</string>
     <string name="anonymous_class_button">Anonymous Class</string>
     <string name="timer_task_button">Timer Task</string>
+    <string name="views_leak_button">Views Leak</string>
+    <string name="fragment_a_text">Fragment A</string>
+    <string name="fragment_b_text">Fragment B\n\nMemory Leak Here</string>
+    <string name="continue_button">Continue To Leak</string>
 </resources>
