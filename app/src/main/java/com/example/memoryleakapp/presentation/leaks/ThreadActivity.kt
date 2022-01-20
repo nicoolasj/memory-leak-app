@@ -1,22 +1,23 @@
 package com.example.memoryleakapp.presentation.leaks
 
-import android.content.Context
-import android.content.Intent
 import android.os.Bundle
-import android.os.SystemClock
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.example.memoryleakapp.R
 
 class ThreadActivity : AppCompatActivity() {
+
+    private var thread: DownloadTask? = DownloadTask()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_thread)
-        DownloadTask().start()
+        thread?.start()
     }
 
-    fun start(context: Context) {
-        val starter = Intent(context, ThreadActivity::class.java)
-        context.startActivity(starter)
+    override fun onDestroy() {
+        super.onDestroy()
+        thread?.interrupt()
     }
 
     /**
@@ -24,7 +25,12 @@ class ThreadActivity : AppCompatActivity() {
      */
     private inner class DownloadTask : Thread() {
         override fun run() {
-            SystemClock.sleep((5000 * 10).toLong())
+            Log.d("nic", "start logging")
+            while (!isInterrupted) {
+                Log.d("nic", "logging")
+            }
+            if (isInterrupted)
+                Log.d("nic", "stop logging")
         }
     }
 }
