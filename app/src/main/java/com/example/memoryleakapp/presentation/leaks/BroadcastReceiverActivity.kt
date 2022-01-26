@@ -27,7 +27,8 @@ class BroadcastReceiverActivity : AppCompatActivity() {
         broadcastReceiver = object : BroadcastReceiver() {
             override fun onReceive(context: Context?, intent: Intent?) {
                 Toast.makeText(
-                    this@BroadcastReceiverActivity,
+//                    this@BroadcastReceiverActivity,
+                    applicationContext,
                     "Airplane mode changed",
                     Toast.LENGTH_SHORT
                 ).show()

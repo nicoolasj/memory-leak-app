@@ -17,7 +17,7 @@ class ThreadActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
-        thread?.interrupt()
+//        thread?.interrupt()
     }
 
     /**
@@ -25,12 +25,12 @@ class ThreadActivity : AppCompatActivity() {
      */
     private inner class DownloadTask : Thread() {
         override fun run() {
-            Log.d("nic", "start logging")
+            Log.d("leak", "start logging")
             while (!isInterrupted) {
-                Log.d("nic", "logging")
+                Log.d("leak", "logging")
             }
             if (isInterrupted)
-                Log.d("nic", "stop logging")
+                Log.d("leak", "stop logging")
         }
     }
 }
